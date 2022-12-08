@@ -3,7 +3,7 @@
 //
 
 //Obfuscate offset
-#define OBFUSCATEOFFSET(str) string2Offset(OBFUSCATE(str))
+#define obfuscateoffset(str) string2Offset(OBFUSCATE(str))
 
 //Library Target
 #define targetLibName OBFUSCATE("libil2cpp.so")
@@ -33,6 +33,6 @@ void PlayerUpdateFunction(void *instance) {
 }
 
 void Pointers() {
-    get_transform = (void *(*)(void *)) getAbsoluteAddress(targetLibName, OBFUSCATEOFFSET("0x139A8A4"));
-    Transform_set_localScale = (void (*)(void*, Vector3))getAbsoluteAddress(targetLibName, OBFUSCATEOFFSET("0x1310784"));
+    get_transform = (void *(*)(void *)) getAbsoluteAddress(targetLibName, obfuscateoffset("0x139A8A4"));
+    Transform_set_localScale = (void (*)(void*, Vector3))getAbsoluteAddress(targetLibName, obfuscateoffset("0x1310784"));
 }
