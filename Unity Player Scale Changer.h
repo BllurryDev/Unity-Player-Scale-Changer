@@ -21,15 +21,15 @@ void SetPlayerSize(void *transform, Vector3 scale)
     return Transform_set_localScale(get_transform(transform), scale);
 }
 
-void (*old_PlayerFunction)(void *instance);
-void PlayerFunction(void *instance) {
+void (*old_PlayerUpdateFunction)(void *instance);
+void PlayerUpdateFunction(void *instance) {
     if (instance != NULL) {
         if(isLocalPlayerSize)
         {
             SetPlayerSize(instance, Vector3(isLocalPlayerSize, isLocalPlayerSize, isLocalPlayerSize));
         }
     }
-    old_PlayerFunction(instance);
+    old_PlayerUpdateFunction(instance);
 }
 
 void Pointers() {
