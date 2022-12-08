@@ -2,6 +2,8 @@
 // Created by Blurry on 9/9/2022.
 //
 
+#include "Vector3.hpp"
+
 //Obfuscate offset
 #define obfuscateoffset(str) string2Offset(OBFUSCATE(str))
 
